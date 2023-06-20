@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/photoswipe.min.css" integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: fit-content;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .gallery-js {
+        display: flex;
+        gap: 10px;
+      }
+
+      .gallery-js div {
+        height: 150px;
+        width: 200px;
+      }
+
+      .gallery-js div a img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>First Gallery</h1>
+      <div class="gallery-js">
+        <div>
+          <!-- You just have to setup your data-pswp-width and data-pswp-height to the values of original resolution of your photo, mine is 2489x1500, and you have to do it individually for every photo you have -->
+          <!--Then you can just follow this structure and put your big photo in a href="" and your thumbnail in the img src=""-->
+          <a href="https://arthur.riverlab.org/projetos/photoswipe/bike1.jpeg"
+            data-pswp-width="2489"
+            data-pswp-height="1500"
+            data-cropped="true"
+            target="_blank" >
+            <img src="https://arthur.riverlab.org/projetos/photoswipe/bike1_reduzida.jpg" alt="" />
+          </a>
+        </div>
+        <div>
+          <a href="https://arthur.riverlab.org/projetos/photoswipe/bike2.jpg"
+            data-pswp-width="2250"
+            data-pswp-height="1500"
+            data-cropped="true"
+            target="_blank" >
+            <img src="https://arthur.riverlab.org/projetos/photoswipe/bike2_reduzida.jpg" alt="" />
+          </a>
+        </div>
+        <div>
+            <!-- You just have to setup your data-pswp-width and data-pswp-height to the values of original resolution of your photo, mine is 2489x1500, and you have to do it individually for every photo you have -->
+            <!--Then you can just follow this structure and put your big photo in a href="" and your thumbnail in the img src=""-->
+            <a href="https://arthur.riverlab.org/projetos/photoswipe/bike1.jpeg"
+              data-pswp-width="2489"
+              data-pswp-height="1500"
+              data-cropped="true"
+              target="_blank" >
+              <img src="https://arthur.riverlab.org/projetos/photoswipe/bike1_reduzida.jpg" alt="" />
+            </a>
+          </div>
+          <div>
+            <a href="https://arthur.riverlab.org/projetos/photoswipe/bike2.jpg"
+              data-pswp-width="2250"
+              data-pswp-height="1500"
+              data-cropped="true"
+              target="_blank" >
+              <img src="https://arthur.riverlab.org/projetos/photoswipe/bike2_reduzida.jpg" alt="" />
+            </a>
+          </div>
+          <div>
+            <!-- You just have to setup your data-pswp-width and data-pswp-height to the values of original resolution of your photo, mine is 2489x1500, and you have to do it individually for every photo you have -->
+            <!--Then you can just follow this structure and put your big photo in a href="" and your thumbnail in the img src=""-->
+            <a href="https://arthur.riverlab.org/projetos/photoswipe/bike1.jpeg"
+              data-pswp-width="2489"
+              data-pswp-height="1500"
+              data-cropped="true"
+              target="_blank" >
+              <img src="https://arthur.riverlab.org/projetos/photoswipe/bike1_reduzida.jpg" alt="" />
+            </a>
+          </div>
+          <div>
+            <a href="https://arthur.riverlab.org/projetos/photoswipe/bike2.jpg"
+              data-pswp-width="2250"
+              data-pswp-height="1500"
+              data-cropped="true"
+              target="_blank" >
+              <img src="https://arthur.riverlab.org/projetos/photoswipe/bike2_reduzida.jpg" alt="" />
+            </a>
+          </div>
+      </div>
+    </div>
+
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/photoswipe-lightbox.esm.min.js'
+
+        const options = {
+        //Any element with this class will become an individual gallery
+        gallery: '.gallery-js',
+
+        // Your slides will be every <a> tag that is children from .gallery-js
+        children: 'a',
+        // This module will only load when you click to show the images, making your data bundle lighter
+        pswpModule: () =>
+            import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/photoswipe.esm.min.js'),
+        }
+
+        const lightbox = new PhotoSwipeLightbox(options)
+
+        lightbox.init()
+    </script>
+  </body>
+</html>
